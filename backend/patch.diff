@@ -1,0 +1,26 @@
+diff --git a/backend/templates/include/foot.html b/backend/templates/include/foot.html
+new file mode 100644
+index 0000000..308b1d0
+--- /dev/null
++++ b/backend/templates/include/foot.html
+@@ -0,0 +1,2 @@
++</body>
++</html>
+diff --git a/backend/templates/include/head.html b/backend/templates/include/head.html
+new file mode 100644
+index 0000000..53873f3
+--- /dev/null
++++ b/backend/templates/include/head.html
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html>
++<head>
++       <meta charset="UTF-8">
++       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
++       <!-- Optional theme -->
++       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
++
++       <!-- Latest compiled and minified JavaScript -->
++       <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
++</head>
++<body>

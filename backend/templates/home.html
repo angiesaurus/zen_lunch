@@ -1,0 +1,22 @@
+{% extends "include/base.html" %}
+{% block content %}
+
+<div id="logo">
+    <img src="./static/lunchbox_logo.png" width="380" height="380" alt="Lunchbox. Let's eat lunch together."/>
+</div>
+
+{% if success %}
+<div class="alert alert-success">{{ success }}</div>
+{% endif %}
+
+<div class="signup">
+<h2> Signup Form </h2>
+<form action="/" method="post">
+
+{% csrf_token %}
+{{ form.as_p }}
+
+<input type="submit" />
+</form>
+</div>
+{% endblock %}
