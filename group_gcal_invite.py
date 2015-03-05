@@ -1,7 +1,6 @@
 #after getting all the names from the database, let's shuffle the addresses and then sort them into groups of 4 #then set events
 
 # this runs 3-5 days BEFORE the Friday lunch -- creates 3 lunch invites (12, 12:30, 1)
-import csv
 import random
 import sys, os
 import gflags
@@ -25,15 +24,15 @@ FLAGS = gflags.FLAGS
 # OAUTH Stuff!
 #FIXME -- new credentials
 FLOW = OAuth2WebServerFlow(
-    client_id='777520625445-7md8r21em7k31ukcqpb9n249ps09or4n.apps.googleusercontent.com',
-    client_secret='Z-9F_50oJkyEEIDrd381rZF5',
+    client_id='CLIENT_ID',
+    client_secret='CLIENT_SECRET',
     scope='https://www.googleapis.com/auth/calendar',
     user_agent='zenlunch/1')
 
 # FIXME: Credentials shouldn't be hardcoded.
 
 calendar_id = 'acoleman@zendesk.com'
-developer_key = 'AIzaSyAnTzxnVYTjPlfMLpHdTooX57AM4gg-GPY'
+developer_key = 'API_KEY'
 
 storage = Storage('calendar.dat')
 credentials = storage.get()
@@ -52,8 +51,8 @@ service = build(serviceName='calendar', version='v3', http=http,
 signups = dict()
 
 # ONLY MODIFY THESE
-signups['12pm'] = ['acoleman@zendesk.com', 'acoleman@zendesk.com+1']
-signups['12:30pm'] = ['angelicacoleman3@gmail.com']
+signups['12pm'] = []
+signups['12:30pm'] = []
 signups['1:00pm'] = []
 date = '2014-08-22'
 
@@ -74,7 +73,7 @@ def random_groups(lst, n=4):
     # Return all the groups
     return groups
 
-locations = ["Chaos", "Rainbow Shell", "Turbo", "Titan", "Sonic", "Doorman Drew",]
+locations = [ENTER MEETING SPOTS AS STRING VALUES]
 
 
 times = {'12pm': {'start': "%sT12:00:00.000-07:00" % date,
@@ -105,10 +104,10 @@ def schedule_block(block_key):
 
     for i, group in enumerate(groups):
         event = {
-             'summary': 'LUNCHBOX LUNCH!!',
+             'summary': 'EVENT TITLE,
              'start': {'dateTime': times[block_key]['start']},
              'end': {'dateTime': times[block_key]['end']},
-             'description': 'This is your Zendine group! Before grabbing food, meet your group at the location listed, then head to the cafe to get food and eat! The meeting location is where you meet, not where you eat.',
+             'description': 'EVENT DESCRIPTION',
              'location': locations[i%len(locations)],
              'guestsCanSeeOtherGuests': True,
              'attendees': [{'email': email} for email in group],
