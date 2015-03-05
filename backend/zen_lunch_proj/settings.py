@@ -26,7 +26,7 @@ DEPLOYED=False
 
 #TODO FIXME
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5-+pj6l27bnvzsvi0eey=sy#csh)28h1h=ws9@=sp-40psz#g8'
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not DEPLOYED
@@ -34,7 +34,7 @@ DEBUG = not DEPLOYED
 TEMPLATE_DEBUG = not DEPLOYED
 
 #TODO FIXME
-ALLOWED_HOSTS = [".corp.dropbox.com", "lunchbox01", "lunchbox"]
+ALLOWED_HOSTS = ["", "", ""]
 
 
 # Application definition
@@ -77,7 +77,7 @@ if DEPLOYED:
     DATABASES = {
         'default': {
             'ENGINE':'django.db.backends.mysql',
-            'HOST' : 'lunchboxdb01.corp.dropbox.com',
+            'HOST' : '',
             'OPTIONS': {
                 'read_default_file': '/home/lunchbox/secrets.cnf',
                 'init_command': 'SET storage_engine=INNODB',
