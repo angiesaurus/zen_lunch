@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+       <!-- Optional theme -->
+       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+       <link rel="stylesheet" href="zen_lunch.css">
+       <!-- Latest compiled and minified JavaScript -->
+       <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+       <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <title>{{title}} Zendine</title>
+    <link rel="stylesheet" href="animate.min.css">
+  </head>
+      <!-- Place this asynchronous JavaScript just before your </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
+<div class="animated infinite shake" id="logo">
+    <img src="https://d13yacurqjgara.cloudfront.net/users/3460/screenshots/1751917/boba_1x.png" width="380" height="380" alt="Lunchbox. Let's eat lunch together."/>
+</div>
+
+{% if success %}
+<div class="alert alert-success">{{ success }}</div>
+{% endif %}
+
+<div class="signup">
+<h2> Signup for Lunch </h2>
+<form action="/" method="post">
+
+{% csrf_token %}
+{{ form.as_p }}
+
+<input type="submit" />
+</form>
+</div>
+
+  <body>
+
